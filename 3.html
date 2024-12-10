@@ -1,0 +1,36 @@
+<style type="text/css" media="screen">
+    @keyframes move{
+        from{ top: 0px;}
+        to{ top: 100px;}
+    }
+    p{
+        animation-name: move;
+        animation-duration: 3s;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+        position: relative;
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        background-color: orange;
+    }
+</style>
+<body>
+    <div>
+        Chọn kiểu thực thi animation
+        <br/>
+        <input type="radio" value="normal" name="direction" checked="" onclick="changeAnimation(this)"> normal
+        <input type="radio" value="reverse" name="direction"formnovalidate="" onclick="changeAnimation(this)" > reverse
+        <input type="radio" value="alternate" name="direction" onclick="changeAnimation(this)" > alternate
+        <input type="radio" value="alternate-reverse" name="direction" onclick="changeAnimation(this)" > alternate-reverse
+    </div>
+    <p id="result">mất dữ liệu</p>
+    <script>
+        function changeAnimation(element)
+        {
+            var value = element.value;
+            document.getElementsByTagName('p')[0].style.animationDirection = value;
+        }
+    </script>
+</body>
+</html>
